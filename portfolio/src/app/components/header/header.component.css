@@ -1,0 +1,14 @@
+img {
+    height: 24px;
+    width: 24px;
+    float:right !important;
+    vertical-align: middle !important
+}
+
+.icons{
+    padding-top:10px
+}
+
+.container-content{
+    padding: 10px 0px
+}
