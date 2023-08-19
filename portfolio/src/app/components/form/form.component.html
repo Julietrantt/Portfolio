@@ -1,0 +1,27 @@
+<form class="form d-flex justify-content-between" [formGroup]="FormData" >
+    <div class="form-row size5">
+        <div class="col formDiv2">
+            <h1>Contact</h1>
+            <h6>I would love to hear about your project and how I could help.Please fill in the form, and I'll get back to you as soon as possible</h6>
+        </div>
+
+    </div>
+    <div class="form-row size5">
+        <div class="col formDiv">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" formControlName="Name"/>
+        </div>
+        <div class="col formDiv">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" formControlName="Email"/>
+        </div>
+        <div class="col formDiv">
+            <label for="message">Message:</label>
+            <textarea class="form-control" rows="5" id="message" formControlName="Message"></textarea>
+        </div>
+        <div class="col formDiv">
+            <button class="btn btn-primary"type="submit" [disabled]="!FormData.valid">Send</button>
+        </div>
+
+    </div>
+</form>
