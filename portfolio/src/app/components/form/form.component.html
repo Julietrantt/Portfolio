@@ -1,4 +1,4 @@
-<form class="form d-flex justify-content-between" [formGroup]="FormData" >
+<form action="javascript:void(0)" (submit)='send()' class="form d-flex justify-content-between" [formGroup]="FormData" >
     <div class="form-row size5">
         <div class="col formDiv2">
             <h1>Contact</h1>
@@ -9,16 +9,17 @@
     <div class="form-row size5">
         <div class="col formDiv">
             <label for="name">Name:</label>
-            <input type="text" class="form-control" formControlName="Name"/>
+            <input type="text" class="form-control" formControlName="name"/>
         </div>
         <div class="col formDiv">
             <label for="email">Email:</label>
-            <input type="text" class="form-control" formControlName="Email"/>
+            <input type="text" class="form-control" formControlName="email"/>
         </div>
         <div class="col formDiv">
             <label for="message">Message:</label>
-            <textarea class="form-control" rows="5" id="message" formControlName="Message"></textarea>
+            <textarea class="form-control" rows="5" id="message" formControlName="message"></textarea>
         </div>
+        <!-- {{FormData.value | json}} -->
         <div class="col formDiv">
             <button class="btn btn-primary"type="submit" [disabled]="!FormData.valid">Send</button>
         </div>
