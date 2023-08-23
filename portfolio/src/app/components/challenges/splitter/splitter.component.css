@@ -1,0 +1,48 @@
+.splitterDiv2{
+    width:100%;
+    margin:50px auto;
+    background-color: white;
+    border-radius: 10px;
+    color:black;
+    padding:20px
+}
+
+ .outputDiv{
+padding:20px !important;
+background-color: #212121;
+border-radius: 10px;
+
+
+}
+
+.inputDiv{
+    padding:20px 20px 20px 0px!important
+    }
+    .inputDiv label{
+        padding-bottom:5px!important
+        }
+    
+@media screen and (max-width:576px) {
+    .inputDiv{
+        padding:20px 0px !important
+    }
+    
+}
+
+.btn{
+    width:100%;
+    margin-bottom: 10px;
+}
+
+.billDiv{
+    margin-bottom: 10px;
+}
+
+.billDiv:first-child{
+    margin-bottom: 20px;
+}
+
+/* .generateBtn{
+   
+    float:;
+} */
