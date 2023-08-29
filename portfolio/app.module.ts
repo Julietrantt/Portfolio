@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ContactService }  from './src/app/components/service/contact.service';
 import { PasswordGeneratorComponent } from './src/app/components/challenges/password-generator/password-generator.component';
 import { MainPageComponent } from './src/app/components/main-page/main-page.component';
+import { SplitterComponent } from './src/app/components/challenges/splitter/splitter.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MainPageComponent } from './src/app/components/main-page/main-page.comp
     TechnologieComponent,
     FormComponent,
     PasswordGeneratorComponent,
-    MainPageComponent
+    MainPageComponent,
+    SplitterComponent
   ],
   imports: [
     BrowserModule,
