@@ -19,16 +19,6 @@ export class FormComponent implements OnInit {
       message: new FormControl('', [Validators.required])
   })}
 
-  // onSubmit(FormData: any) {
-  //   console.log(FormData)
-  //   this.contact.PostMessage(FormData)
-  //   .subscribe(response => {
-  //   location.href = 'https://mailthis.to/confirm'
-  //   console.log(response)
-  //   }, error => {
-  //   console.warn(error.responseText)
-  //   console.log({ error })
-  //   })
 send(){
   emailjs.init('7r9YzdI0azp0rXeCb')
 let response = emailjs.send("service_is2c2kv","template_s9feham",{
@@ -39,14 +29,6 @@ let response = emailjs.send("service_is2c2kv","template_s9feham",{
 
   alert('message has been sent.')
   this.FormData.reset()
-
+}
 }
 
-
-}
-
-// emailjs.send("service_is2c2kv","template_s9feham",{
-//   email: "1995julietran@gmail.com",
-//   message: "vv",
-//   name: "Marti",
-//   });

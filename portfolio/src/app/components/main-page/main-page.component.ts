@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+        document.getElementById("myStyle")?.setAttribute("class", " "); 
+    document.getElementById("myStyle2")?.setAttribute("class", " "); 
+    document.getElementById("myStyle3")?.setAttribute("class", " container"); 
+   }
 
   ngOnInit(): void {
   }
