@@ -15,6 +15,7 @@ import { ContactService }  from './src/app/components/service/contact.service';
 import { PasswordGeneratorComponent } from './src/app/components/challenges/password-generator/password-generator.component';
 import { MainPageComponent } from './src/app/components/main-page/main-page.component';
 import { SplitterComponent } from './src/app/components/challenges/splitter/splitter.component';
+import { BirthdayCountdownComponent } from './src/app/components/challenges/birthday-countdown/birthday-countdown.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SplitterComponent } from './src/app/components/challenges/splitter/spli
     FormComponent,
     PasswordGeneratorComponent,
     MainPageComponent,
-    SplitterComponent
+    SplitterComponent,
+    BirthdayCountdownComponent
   ],
   imports: [
     BrowserModule,

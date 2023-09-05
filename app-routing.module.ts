@@ -6,12 +6,13 @@ import { PasswordGeneratorComponent } from 'src/app/components/challenges/passwo
 import { SplitterComponent } from 'src/app/components/challenges/splitter/splitter.component'
 import { MainPageComponent } from 'src/app/components/main-page/main-page.component'
 import { ProfilComponent } from 'src/app/components/main-page/profil/profil.component'
-
+import { BirthdayCountdownComponent } from 'src/app/components/challenges/birthday-countdown/birthday-countdown.component'
  const routes: Routes = [
     { path: '', redirectTo: '/profil', pathMatch: 'full' },
     { path: 'profil', component: MainPageComponent },
     { path: 'password', component: PasswordGeneratorComponent },
     { path: 'splitter', component: SplitterComponent },
+    { path: 'birthday', component: BirthdayCountdownComponent },
   ]
   
 
