@@ -16,6 +16,7 @@ import { PasswordGeneratorComponent } from './src/app/components/challenges/pass
 import { MainPageComponent } from './src/app/components/main-page/main-page.component';
 import { SplitterComponent } from './src/app/components/challenges/splitter/splitter.component';
 import { BirthdayCountdownComponent } from './src/app/components/challenges/birthday-countdown/birthday-countdown.component';
+import { MultiStepFormComponent } from './src/app/components/challenges/multi-step-form/multi-step-form.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { BirthdayCountdownComponent } from './src/app/components/challenges/birt
     PasswordGeneratorComponent,
     MainPageComponent,
     SplitterComponent,
-    BirthdayCountdownComponent
+    BirthdayCountdownComponent,
+    MultiStepFormComponent
   ],
   imports: [
     BrowserModule,
