@@ -22,6 +22,12 @@
     padding:10px
 }
 
+.nav-link:focus{
+    border-radius: 30px;
+    background-color: #89cff0;
+    color:black
+}
+
 .nav-link.active{
     border-radius: 30px;
     background-color: #89cff0;
@@ -69,6 +75,20 @@ br{
     color:grey
 }
 
+.addText{
+    font-size: 10px;
+    font-weight: 600;
+    color:grey;
+    margin: 0px;
+}
+
+.addTitle{
+    color:#001030;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 2;
+    margin: 0px;
+}
 .form-control {
     display: block;
     width: 100%;
@@ -86,10 +106,31 @@ br{
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.btnPosition2{
+    position: absolute;
+    bottom: 10px;
+    left:200px;
+    background-color:white;
+    font-size: 10px;
+    border: 0px solid #001030;
+    font-weight: 600;
+    color:grey
+}
+.btnPosition2:active{
+    position: absolute;
+    bottom: 10px;
+    left:200px;
+    background-color:white;
+    font-size: 10px;
+    border: 0px solid #001030;
+    font-weight: 600;
+    color:grey
+}
+
 .btnPosition{
     position: absolute;
     bottom: 10px;
-    right:40px;
+    right:30px;
     background-color: #001030;
     font-size: 12px;
     border: 1px solid #001030;
@@ -100,8 +141,94 @@ br{
     color:#001030;
     font-size: 10px;
     font-weight: 600;
+    line-height: 2;
 }
 
 .contentTitle1{
     color:#001030;
+}
+
+.boxDiv{
+    line-height: 10pt;
+    padding:10px 10px;
+    border: 1px solid grey;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    float: left !important;
+    min-width:86px
+}
+
+.boxDiv:hover{
+    line-height: 10pt;
+    padding:10px 10px;
+    border: 1px solid grey;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(235, 235, 235);
+
+}
+
+.timeText{
+    vertical-align: middle;
+    margin: auto 5px!important;
+}
+
+
+.form-switch .form-check-input {
+
+    margin-left: -2.3em;
+
+}
+
+.switchDiv{
+    background-color: #dff5ff;
+    border-radius: 5px;
+
+}
+
+.content{
+    padding:20px
+}
+
+.comment{
+    margin:0px;
+    font-weight: 400;
+}
+/* .contentDiv{
+    display: none;
+} */
+
+/* .status{
+    display: none;
+} */
+
+.icon{
+    margin-bottom: 20px;
+}
+
+.checkBox{
+    width:12px;
+    height:12px;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+    accent-color: #5f4ef6 ;
+}
+
+.addPriceText{
+    font-size: 10px;
+    color:#5f4ef6;
+    margin: auto 0px;
+}
+
+.addDiv{
+    border: 1px solid #5f4ef6;
+    padding:10px;
+    margin:10px 5px;
+    border-radius: 10px;
+}
+
+.priceText{
+    font-weight: 400;
 }
