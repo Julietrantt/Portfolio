@@ -1,17 +1,16 @@
-.card{
+.card {
     height: 400px;
     border-radius: 10px;
-    padding:10px;
-    width:550px;
-    margin:50px auto;
-
+    padding: 10px;
+    width: 550px;
+    margin: 50px auto;
 }
 
-.page{
+.page {
     border-radius: 5px;
 }
 
-.sidebar{
+.sidebar {
     background-image: url("../../../../assets/images/bg-sidebar-desktop.svg");
     height: 380px;
     background-repeat: no-repeat;
@@ -19,76 +18,75 @@
     /* border-bottom-left-radius: 10px; */
     background-size: cover;
     /* background-size: 100% 100%; */
-    padding:10px
+    padding: 10px;
 }
 
-.nav-link:focus{
+.nav-link:focus {
     border-radius: 30px;
     background-color: #89cff0;
-    color:black
+    color: black;
 }
 
-.nav-link.active{
+.nav-link.active {
     border-radius: 30px;
     background-color: #89cff0;
-    color:black
+    color: black;
 }
 
-.nav-link{
+.nav-link {
     border-radius: 30px;
     border: 1px solid white;
-    color:white;
-    padding:2px 10px;
+    color: white;
+    padding: 2px 10px;
     margin: 5px 10px 5px 5px;
 }
 
-.stepText{
-    color:white;
+.stepText {
+    color: white;
     font-size: 10px;
 }
 
-.stepText1{
-    color:white;
+.stepText1 {
+    color: white;
     font-size: 12px;
     font-weight: 600;
 }
 
-br{
+br {
     height: 10px !important;
 }
 
-.textDiv{
-   
+.textDiv {
     max-height: 50px;
     line-height: 10pt;
     padding: 5px;
 }
 
-
-.contentDiv{
-    width:90%
+.contentDiv {
+    width: 90%;
 }
 
-.contentText{
+.contentText {
     font-size: 10px;
     font-weight: 600;
-    color:grey
+    color: grey;
 }
 
-.addText{
+.addText {
     font-size: 10px;
     font-weight: 600;
-    color:grey;
+    color: grey;
     margin: 0px;
 }
 
-.addTitle{
-    color:#001030;
+.addTitle {
+    color: #001030;
     font-size: 10px;
     font-weight: 600;
     line-height: 2;
     margin: 0px;
 }
+
 .form-control {
     display: block;
     width: 100%;
@@ -106,186 +104,173 @@ br{
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btnPosition2{
+.btnPosition2 {
     position: absolute;
     bottom: 10px;
-    left:200px;
-    background-color:white;
+    left: 200px;
+    background-color: white;
     font-size: 10px;
     border: 0px solid #001030;
     font-weight: 600;
-    color:grey
-}
-.btnPosition2:active{
-    position: absolute;
-    bottom: 10px;
-    left:200px;
-    background-color:white;
-    font-size: 10px;
-    border: 0px solid #001030;
-    font-weight: 600;
-    color:grey
+    color: grey;
 }
 
-.btnPosition{
+.btnPosition2:active {
     position: absolute;
     bottom: 10px;
-    right:30px;
+    left: 200px;
+    background-color: white;
+    font-size: 10px;
+    border: 0px solid #001030;
+    font-weight: 600;
+    color: grey;
+}
+
+.btnPosition {
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
     background-color: #001030;
     font-size: 12px;
     border: 1px solid #001030;
     font-weight: 600;
 }
 
-.contentTitle{
-    color:#001030;
+.contentTitle {
+    color: #001030;
     font-size: 10px;
     font-weight: 600;
     line-height: 2;
 }
 
-.contentTitle1{
-    color:#001030;
+.contentTitle1 {
+    color: #001030;
 }
 
-.boxDiv{
+.boxDiv {
     line-height: 10pt;
-    padding:10px 10px;
+    padding: 10px 10px;
     border: 1px solid grey;
     margin: 10px;
     border-radius: 10px;
     background-color: white;
     float: left !important;
-    min-width:86px
+    min-width: 86px;
 }
 
-.boxDiv:hover{
+.boxDiv:hover {
     line-height: 10pt;
-    padding:10px 10px;
+    padding: 10px 10px;
     border: 1px solid grey;
     margin: 10px;
     border-radius: 10px;
     background-color: rgb(235, 235, 235);
 }
 
-
-.timeText{
+.timeText {
     vertical-align: middle;
-    margin: auto 5px!important;
+    margin: auto 5px !important;
 }
-
 
 .form-switch .form-check-input {
-
     margin-left: -2.3em;
-
 }
 
-.switchDiv{
+.switchDiv {
     background-color: #dff5ff;
     border-radius: 5px;
-
 }
 
-.content{
-    padding:20px
+.content {
+    padding: 20px;
 }
 
-.comment{
-    margin:0px;
+.comment {
+    margin: 0px;
     font-weight: 400;
 }
-/* .contentDiv{
-    display: none;
-} */
 
-/* .status{
-    display: none;
-} */
-
-.icon{
+.icon {
     margin-bottom: 20px;
 }
 
-.checkBox{
-    width:12px;
-    height:12px;
+.checkBox {
+    width: 12px;
+    height: 12px;
     vertical-align: middle;
     margin-top: auto;
     margin-bottom: auto;
-    accent-color: #5f4ef6 ;
+    accent-color: #5f4ef6;
 }
 
-.addPriceText{
+.addPriceText {
     font-size: 10px;
-    color:#5f4ef6;
+    color: #5f4ef6;
     margin: auto 0px;
 }
 
-.addDiv{
+.addDiv {
     border: 1px solid #5f4ef6;
-    padding:10px;
-    margin:10px 5px;
+    padding: 10px;
+    margin: 10px 5px;
     border-radius: 10px;
 }
 
-.priceText{
+.priceText {
     font-weight: 400 !important;
 }
 
-.totalPrice{
+.totalPrice {
     font-size: 12px;
-    color:#5f4ef6;
+    color: #5f4ef6;
     font-weight: 600;
 }
 
-.summaryText{
+.summaryText {
     font-size: 10px;
     font-weight: 600;
-    color:grey;
+    color: grey;
     margin: 0px;
     vertical-align: middle;
     background-color: #f8fafc !important;
-    border:0px;
-    width:80%
+    border: 0px;
+    width: 80%;
 }
 
-.summaryTitle{
-    color:#001030;
+.summaryTitle {
+    color: #001030;
     font-size: 10px;
     font-weight: 600;
     line-height: 2;
     margin: 0px;
     vertical-align: middle;
     background-color: #f8fafc !important;
-    border:0px;
-    
+    border: 0px;
 }
 
-tr:first-child{
-    border-bottom:1px solid rgb(207, 206, 206);
+tr:first-child {
+    border-bottom: 1px solid rgb(207, 206, 206);
     margin-bottom: 100px;
 }
 
-.summaryTitle2{
+.summaryTitle2 {
     background-color: white !important;
-    color:#5f4ef6;
+    color: #5f4ef6;
     font-size: 12px;
     font-weight: 600;
     line-height: 2;
     margin: 0px;
     vertical-align: middle;
-  
-    border:0px
+
+    border: 0px;
 }
 
-.summaryText2{
+.summaryText2 {
     font-size: 10px;
     font-weight: 600;
-    color:grey;
+    color: grey;
     margin: 0px;
     vertical-align: middle;
     background-color: white;
-    border:0px;
-    
+    border: 0px;
 }
