@@ -22,14 +22,35 @@ export class MultiStepFormComponent implements OnInit {
   onlineText='';
   storageText='';
   customText='';
+  arcade='Arcade';
+  advanced='Advanced';
+  pro='Pro';
+  planText='';
+  summaryTime='';
+  planPrice=0;
+  online='Online';
+  storage='Storage';
+  profile='Profile'
+  onlineTextSummary='';
+  onlinePriceSummary= 0;
+  onlineTextSummary2='';
+  onlineTextSummary3='';
+  onlinePriceSummary2= 0;
+  onlinePriceSummary3= 0;
+  status1 = false;
+  status2 = false;
+  status3 = false;
+ 
 
   constructor() { }
 
   ngOnInit(): void {
+    this.onlinePriceSummary
     this.selected
     console.log(this.selected)
     this.timePlan()
     this.addPlan()
+    // this.addPickToSummary()
     this.tab1=true
     this.status == 'status'
   }
@@ -87,10 +108,72 @@ export class MultiStepFormComponent implements OnInit {
   }
 
   swicth(){
-    console.log(this.selected)
-    
    this.timePlan()
    this.addPlan()
+   this.addPickToSummary()
+   this.addPickToSummary2()
+   this.addPickToSummary3()
+  }
+  addPlanToSummary(plan:any){
+ console.log( plan==this.arcade)
+    plan==this.arcade? this.planText="Arcade" :plan==this.advanced?this.planText="Advanced":this.planText="Pro"
+    this.selected == false? this.summaryTime = 'Monthly':this.summaryTime = 'Yearly'
+
+    this.planText=="Arcade" && this.summaryTime=="Monthly"?this.planPrice=9:
+    this.planText=="Advanced" && this.summaryTime=="Monthly"?this.planPrice=12:
+    this.planText=="Pro" && this.summaryTime=="Monthly"?this.planPrice=15:
+    this.planText=="Arcade" && this.summaryTime=="Yearly"?this.planPrice=90:
+    this.planText=="Advanced" && this.summaryTime=="Yearly"?this.planPrice=120:
+    this.planText=="Pro" && this.summaryTime=="Yearly"?this.planPrice=150:this.planPrice=0
   }
 
+  // addPickToSummary(pick:string){
+
+  //   pick==this.online? this.onlineTextSummary="Online Service" :pick==this.storage?this.onlineTextSummary2="Larger storage":this.onlineTextSummary3="Customizable Profile"
+  //   this.selected == false? this.summaryTime = 'Monthly':this.summaryTime = 'Yearly'
+  //   console.log(pick)
+
+
+  // console.log(this.onlineTextSummary)
+  
+  // }
+
+  addPickToSummary(){
+    console.log(this.status1)
+    this.selected == false? this.summaryTime = 'Monthly':this.summaryTime = 'Yearly'
+    this.onlineTextSummary = 'Online Service'
+
+    if( this.status1==true &&  this.selected == false){ 
+        this.onlinePriceSummary=1 
+    }else if(  this.status1==true &&  this.selected == true  ){
+      this.onlinePriceSummary=10
+    }else if( this.status1==false){
+      this.onlineTextSummary='' ; this.onlinePriceSummary=0
+    }
+  }
+
+  addPickToSummary2(){
+    this.selected == false? this.summaryTime = 'Monthly':this.summaryTime = 'Yearly'
+    this.onlineTextSummary2 = 'Larger storage'
+
+    if(  this.status2==true &&  this.selected == false){ 
+        this.onlinePriceSummary2=2 
+    }else if( this.status2==true &&   this.selected == true  ){
+      this.onlinePriceSummary2=20
+    }else if(this.status2==false ){
+      this.onlineTextSummary2='' ; this.onlinePriceSummary2=0
+    }
+  }
+  addPickToSummary3(){
+    this.selected == false? this.summaryTime = 'Monthly':this.summaryTime = 'Yearly'
+    this.onlineTextSummary3 = 'Customizable Profile'
+
+    if( this.status3==true &&   this.selected == false){ 
+        this.onlinePriceSummary3=2 
+    }else if( this.status3==true &&   this.selected == true  ){
+      this.onlinePriceSummary3=20
+    }else if(this.status3==false ){
+      this.onlineTextSummary3='' ;this.onlinePriceSummary3=0
+    }
+  }
 }

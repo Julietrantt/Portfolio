@@ -1,5 +1,6 @@
 <div class="page">
     <div class="card row">
+        <!-- SIDEBAR.................................................................... -->
         <div class="sidebar col-4">
             <li class="d-flex">
                 <button class="nav-link" [ngClass]="{ active: tab1 }" (click)="change(tabStatus)">
@@ -38,8 +39,9 @@
                 </div>
             </li>
         </div>
-
+        <!-- CONTENT.................................................................... -->
         <div class="content col-8">
+            <!-- INFO................................................................... -->
             <div class="contentDiv" *ngIf="status == 'status' ? true : false">
                 <h2 class="contentTitle1">Personal info</h2>
                 <p class="contentText">
@@ -65,7 +67,7 @@
                     </button>
                 </div>
             </div>
-
+            <!-- PLAN................................................................... -->
             <div class="" *ngIf="status == 'status2' ? true : false">
                 <h2 class="contentTitle1">Select your plan</h2>
                 <p class="contentText">
@@ -73,7 +75,7 @@
                 </p>
 
                 <div class="d-flex justify-content-around">
-                    <div type="button" class="boxDiv formDiv">
+                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(arcade)">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40">
                             <g fill="none" fill-rule="evenodd">
                                 <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
@@ -89,7 +91,7 @@
                             2 months free
                         </p>
                     </div>
-                    <div type="button" class="boxDiv formDiv">
+                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(advanced)">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40">
                             <g fill="none" fill-rule="evenodd">
                                 <circle cx="20" cy="20" r="20" fill="#F9818E" />
@@ -105,7 +107,7 @@
                             2 months free
                         </p>
                     </div>
-                    <div type="button" class="boxDiv formDiv">
+                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(pro)">
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40">
                             <g fill="none" fill-rule="evenodd">
                                 <circle cx="20" cy="20" r="20" fill="#483EFF" />
@@ -126,7 +128,7 @@
                     <p class="contentTitle timeText">monthly</p>
                     <div class="form-check form-switch no-shadow">
                         <input (change)="selected = !selected; swicth()" class="form-check-input" type="checkbox"
-                            role="switch" id="flexSwitchCheckDefault" />
+                            role="switch" id="flexSwitchCheckDefault" [checked]="selected"/>
                     </div>
                     <p class="contentTitle timeText">yearly</p>
                 </div>
@@ -138,11 +140,7 @@
                     Next step
                 </button>
             </div>
-
-
-
-
-
+            <!-- ADD-ONS ................................................................... -->
             <div class="" *ngIf="status == 'status3' ? true : false">
                
                 <h2 class="contentTitle1">Pick add-ons</h2>
@@ -152,7 +150,7 @@
 
                 <div class="">
                  <div class="row addDiv">
-                    <input class="col-sm-1 checkBox" type="checkbox">
+                    <input class="col-sm-1 checkBox" type="checkbox" (change)=" status1 = !status1;addPickToSummary();" [checked]="status1">
                     <div class="col-sm-8">
                         <p class="addTitle">Online service</p>
                         <p class="addText">Access to multiplayer</p>
@@ -160,7 +158,7 @@
                     <p class="col-sm-3 addPriceText">{{onlineText}}</p>
                  </div>
                  <div class="row addDiv">
-                    <input class="col-sm-1 checkBox" type="checkbox">
+                    <input class="col-sm-1 checkBox" type="checkbox" (change)="status2 = !status2;addPickToSummary2()" [checked]="status2">
                     <div class="col-sm-8">
                         <p class="addTitle">Larger storage</p>
                         <p class="addText">Extra 1TB of cloud save</p>
@@ -168,7 +166,7 @@
                     <p class="col-sm-3 addPriceText">{{storageText}}</p>
                  </div>
                  <div class="row addDiv">
-                    <input class="col-sm-1 checkBox" type="checkbox">
+                    <input class="col-sm-1 checkBox"  type="checkbox" (change)="status3 = !status3;addPickToSummary3()" [checked]="status3">
                     <div class="col-sm-8">
                         <p class="addTitle">Customizable Profile</p>
                         <p class="addText">Custom theme on your profile</p>
@@ -185,13 +183,7 @@
                     Next step
                 </button>
             </div>
-
-
-
-
-
-
-
+            <!-- SUMMARY................................................................... -->
             <div class="" *ngIf="status == 'status4' ? true : false">
                  
                 <h2 class="contentTitle1">Finishing up</h2>
@@ -202,18 +194,24 @@
                 <table class="table table-hover">
                     <tbody>
                       <tr>
-                
-                        <td class="addTitle">Arcade (Monthly) <br> <p class="addText">change</p></td>
-                        <td class="addTitle">price</td>
-                        
+                        <td class="summaryText">{{planText}} ({{summaryTime}}) <br> <p class="summaryText">change</p></td>
+                        <td class="summaryTitle">${{planPrice}}/{{summaryTime}}</td>
+                      </tr>
+                      <tr *ngIf="status1">
+                        <td class="summaryText">{{onlineTextSummary}} ({{summaryTime}})</td>
+                        <td class="summaryTitle priceText">${{onlinePriceSummary}}/{{summaryTime}}</td>
+                      </tr>
+                      <tr *ngIf="status2">
+                        <td class="summaryText">{{onlineTextSummary2}}  ({{summaryTime}})</td>
+                        <td class="summaryTitle priceText">${{onlinePriceSummary2}}/{{summaryTime}}</td>
+                      </tr>
+                      <tr *ngIf="status3">
+                        <td class="summaryText">{{onlineTextSummary3}}  ({{summaryTime}})</td>
+                        <td class="summaryTitle priceText">${{onlinePriceSummary3}}/{{summaryTime}}</td>
                       </tr>
                       <tr>
-                        <td class="addText">Arcade (Monthly)</td>
-                        <td class="addTitle priceText">price</td>
-                      </tr>
-                      <tr>
-                        <td class="addText">Arcade (Monthly)</td>
-                        <td class="addTitle priceText">price</td>
+                        <td class="summaryText2">Total (per month)</td>
+                        <td class="summaryTitle2  totalPrice">price</td>
                       </tr>
                     </tbody>
                   </table>
