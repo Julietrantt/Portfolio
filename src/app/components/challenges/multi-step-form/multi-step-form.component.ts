@@ -13,7 +13,8 @@ export class MultiStepFormComponent implements OnInit {
   tabStatus ='status';
   tabStatus2='status2';
   tabStatus3='status3';
-  tabStatus4='status4'
+  tabStatus4='status4';
+  tabStatus5='status5';
   status: string ="status";
   selected = false;
   arcadeText ='';
@@ -40,6 +41,8 @@ export class MultiStepFormComponent implements OnInit {
   status1 = false;
   status2 = false;
   status3 = false;
+  totalAmount= 0;
+  tab5!: boolean;
  
 
   constructor() { }
@@ -88,21 +91,31 @@ export class MultiStepFormComponent implements OnInit {
        this.tab2=false;
        this.tab3=false;
        this.tab4=false;
+       this.tab5=false;
     }else if(tab == "status2") {
       this.tab1=false;
       this.tab2=true;
       this.tab3=false;
       this.tab4=false;
+      this.tab5=false;
     }else if(tab == "status3") {
       this.tab1=false;
       this.tab2=false;
       this.tab3=true;
       this.tab4=false;
+      this.tab5=false;
     }else if(tab == "status4") {
       this.tab1=false;
       this.tab2=false;
       this.tab3=false;
       this.tab4=true;
+      this.tab5=false;
+    }else if( tab == "status5"){
+      this.tab1=false;
+      this.tab2=false;
+      this.tab3=false;
+      this.tab4=false;
+      this.tab5=true;   
     }
     return this.status = tab
   }
@@ -125,6 +138,8 @@ export class MultiStepFormComponent implements OnInit {
     this.planText=="Arcade" && this.summaryTime=="Yearly"?this.planPrice=90:
     this.planText=="Advanced" && this.summaryTime=="Yearly"?this.planPrice=120:
     this.planText=="Pro" && this.summaryTime=="Yearly"?this.planPrice=150:this.planPrice=0
+
+    this.totalCount()
   }
 
   // addPickToSummary(pick:string){
@@ -150,6 +165,8 @@ export class MultiStepFormComponent implements OnInit {
     }else if( this.status1==false){
       this.onlineTextSummary='' ; this.onlinePriceSummary=0
     }
+
+    this.totalCount()
   }
 
   addPickToSummary2(){
@@ -163,6 +180,8 @@ export class MultiStepFormComponent implements OnInit {
     }else if(this.status2==false ){
       this.onlineTextSummary2='' ; this.onlinePriceSummary2=0
     }
+
+    this.totalCount()
   }
   addPickToSummary3(){
     this.selected == false? this.summaryTime = 'Monthly':this.summaryTime = 'Yearly'
@@ -175,5 +194,10 @@ export class MultiStepFormComponent implements OnInit {
     }else if(this.status3==false ){
       this.onlineTextSummary3='' ;this.onlinePriceSummary3=0
     }
+
+    this.totalCount()
+  }
+  totalCount(){
+    this.totalAmount = this.onlinePriceSummary + this.onlinePriceSummary2 + this.onlinePriceSummary3 + this.planPrice
   }
 }

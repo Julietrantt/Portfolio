@@ -19,7 +19,7 @@
     --s: 15px;  /* size of the frame */
     --b: 1px;   /* border thickness */
     --w: 200px; /* width of the image */
-    --c: white;
+    --c: black;
     
     width: var(--w);
     aspect-ratio: 1;
@@ -38,3 +38,15 @@
     --_i: calc(100% - 2*var(--s));
   }
   
+  .title{
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .subtitle{
+    font-size: 10px;
+  }
+
+  a{
+    color:rgb(43, 9, 51)
+  }

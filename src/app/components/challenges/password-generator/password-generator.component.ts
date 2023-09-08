@@ -33,6 +33,7 @@ export class PasswordGeneratorComponent implements OnInit {
 
 
   ngOnInit(): void {  
+    document.getElementById("myStyle3")?.setAttribute("class", "calculator container"); 
 
   console.log(this.lowerCaseLetters)
   console.log(this.generateChar)

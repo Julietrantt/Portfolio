@@ -23,7 +23,7 @@ export class SplitterComponent implements OnInit {
   constructor (private builder: FormBuilder,@Inject(DOCUMENT) document: Document) {
     document.getElementById("myStyle")?.setAttribute("class", "splitter"); 
     document.getElementById("myStyle2")?.setAttribute("class", "splitter"); 
-    document.getElementById("myStyle3")?.setAttribute("class", "splitter container titleLight"); 
+    document.getElementById("myStyle3")?.setAttribute("class", " splitter1 container"); 
   }
 
   ngOnInit (): void {

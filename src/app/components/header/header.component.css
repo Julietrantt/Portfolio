@@ -10,7 +10,19 @@ img {
 }
 
 .container-content{
-    padding: 10px 0px;
- 
+    padding: 0px 0px;
+    position: relative;
+    top: 0;
+    left: 0;
+/* width:100vw */
+}
+.header {
+   background-color: #424242 ; 
+   padding:10px;
+   color:white;
 
+}
+
+.github-logo + .linkedIn-logo {
+    color:black !important
 }
