@@ -1,28 +1,28 @@
 img {
     height: 24px;
     width: 24px;
-    float:right !important;
-    vertical-align: middle !important
+    float: right !important;
+    vertical-align: middle !important;
 }
 
-.icons{
-    padding-top:0px
+.icons {
+    padding-top: 0px;
 }
 
-.container-content{
+.container-content {
     padding: 0px 0px;
     position: relative;
     top: 0;
     left: 0;
-/* width:100vw */
+    /* width:100vw */
 }
+
 .header {
-   background-color: #424242 ; 
-   padding:10px;
-   color:white;
-
+    background-color: #424242;
+    padding: 10px;
+    color: white;
 }
 
-.github-logo + .linkedIn-logo {
-    color:black !important
+.github-logo+.linkedIn-logo {
+    color: black !important;
 }

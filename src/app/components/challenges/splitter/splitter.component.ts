@@ -9,7 +9,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class SplitterComponent implements OnInit {
   FormData!: FormGroup;
-  
   bill: any
   tip: any
   tipAmount!: number

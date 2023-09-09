@@ -6,10 +6,40 @@
     margin: 50px auto;
 }
 
-.page {
-    border-radius: 5px;
-    height: 100vh;
-}
+
+
+@media only screen and (max-width: 576px) {
+    .card {
+  
+        width: 100%;
+    
+    } 
+       .btnPosition2 {
+
+        left: 20px !important;
+  
+    }
+    .headerMobile{
+        background-image: url("../../../../assets/images/bg-sidebar-mobile.svg");
+        background-size: cover !important;
+        height: 60px;
+        border-radius: 5px;
+    }
+    .nav-link{
+        vertical-align: middle;
+        height: 30px;       
+        margin-top: auto !important;
+        margin-bottom: auto !important;
+    }
+    .headerMobile2{
+        height: 60px;
+ 
+    }
+    .confirmDiv{
+        height: 100% !important;
+
+    }
+  }
 
 .sidebar {
     background-image: url("../../../../assets/images/bg-sidebar-desktop.svg");
@@ -20,6 +50,7 @@
     background-size: cover;
     /* background-size: 100% 100%; */
     padding: 10px;
+
 }
 
 .nav-link:focus {
@@ -108,7 +139,7 @@ br {
 .btnPosition2 {
     position: absolute;
     bottom: 10px;
-    left: 200px;
+    left: 180px;
     background-color: white;
     font-size: 10px;
     border: 0px solid #001030;
@@ -156,7 +187,8 @@ br {
     border-radius: 10px;
     background-color: white;
     float: left !important;
-    min-width: 86px;
+    min-width: 80px;
+    width: 100%;
 }
 
 .boxDiv:hover {

@@ -1,7 +1,7 @@
 <div class="page">
     <div class="card row">
         <!-- SIDEBAR.................................................................... -->
-        <div class="sidebar col-4">
+        <div class="sidebar col-4 d-none d-sm-block">
             <li class="d-flex">
                 <button class="nav-link" [ngClass]="{ active: tab1 }" (click)="change(tabStatus)">
                     1
@@ -39,8 +39,25 @@
                 </div>
             </li>
         </div>
+        <!-- HEADER....................................................................................................... -->
+        <div class="headerMobile col-12 d-sm-none">
+  <div class="d-flex justify-content-around headerMobile2">
+    <button class="nav-link" [ngClass]="{ active: tab1 }" (click)="change(tabStatus)">
+        1
+    </button>
+    <button class="nav-link" [ngClass]="{ active: tab2 }" (click)="change(tabStatus2)">
+        2
+    </button>
+    <button class="nav-link" [ngClass]="{ active: tab3 }" (click)="change(tabStatus3)">
+        3
+    </button>
+    <button class="nav-link" [ngClass]="{ active: tab4 }" (click)="change(tabStatus4)">
+        4
+    </button>
+  </div>
+        </div>
         <!-- CONTENT.................................................................... -->
-        <div class="content col-8">
+        <div class="content col-sm-8">
             <!-- INFO................................................................... -->
             <div class="contentDiv" *ngIf="status == 'status' ? true : false">
                 <h2 class="contentTitle1">Personal info</h2>
@@ -151,27 +168,27 @@
                 <div class="">
                  <div class="row addDiv">
                     <input class="col-sm-1 checkBox" type="checkbox" (change)=" status1 = !status1;addPickToSummary();" [checked]="status1">
-                    <div class="col-sm-8">
+                    <div class="col-8">
                         <p class="addTitle">Online service</p>
                         <p class="addText">Access to multiplayer</p>
                     </div>
-                    <p class="col-sm-3 addPriceText">{{onlineText}}</p>
+                    <p class="col-3 addPriceText">{{onlineText}}</p>
                  </div>
                  <div class="row addDiv">
                     <input class="col-sm-1 checkBox" type="checkbox" (change)="status2 = !status2;addPickToSummary2()" [checked]="status2">
-                    <div class="col-sm-8">
+                    <div class="col-8">
                         <p class="addTitle">Larger storage</p>
                         <p class="addText">Extra 1TB of cloud save</p>
                     </div>
-                    <p class="col-sm-3 addPriceText">{{storageText}}</p>
+                    <p class="col-3 addPriceText">{{storageText}}</p>
                  </div>
                  <div class="row addDiv">
                     <input class="col-sm-1 checkBox"  type="checkbox" (change)="status3 = !status3;addPickToSummary3()" [checked]="status3">
-                    <div class="col-sm-8">
+                    <div class="col-8">
                         <p class="addTitle">Customizable Profile</p>
                         <p class="addText">Custom theme on your profile</p>
                     </div>
-                    <p class="col-sm-3 addPriceText">{{customText}}</p>
+                    <p class="col-3 addPriceText">{{customText}}</p>
                  </div>
                 </div>
 
@@ -230,11 +247,6 @@
                    Thanks for confirming your subscription! I hope you have fun using my platform. If you ever need support, please feel free to email me at juli3.tranova@gmail.com.
                 </p>
             </div>
-
-
-
-
-
         </div>
     </div>
 </div>

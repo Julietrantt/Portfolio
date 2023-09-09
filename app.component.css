@@ -1,12 +1,12 @@
 .container{
     background-color: #ffffff;
     color: #000000 ;
-    width: 100vw;
+    /* width: 100vw; */
     padding-bottom: 20px ;
 }
 
 .footer-text{
-
+font-size: 10px;
 text-align: center;
 color: grey;
 }

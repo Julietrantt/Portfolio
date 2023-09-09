@@ -9,7 +9,6 @@
 .splitterDiv {
 height: 100vh;
 width: 100%;
-
 }
 
 .outputDiv {
@@ -38,7 +37,11 @@ width: 100%;
   .box {
     height: 0px !important;
   }
-
+  .splitterDiv {
+    height: 100%;
+    width: 100%;
+    }
+    
 
 }
 @media screen and (max-width: 768px) {
