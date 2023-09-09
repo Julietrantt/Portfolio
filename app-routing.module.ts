@@ -13,8 +13,7 @@ import { MultiStepFormComponent } from 'src/app/components/challenges/multi-step
     { path: '', component: MainPageComponent },
     { path: 'password', component: PasswordGeneratorComponent },
     { path: 'splitter', component: SplitterComponent },
-    { path: 'form', component: MultiStepFormComponent },
-    { path: '**', component: MainPageComponent}
+    { path: 'form', component: MultiStepFormComponent }
   ]
   
 
