@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 @Component({
   selector: 'app-multi-step-form',
   templateUrl: './multi-step-form.component.html',
@@ -33,9 +33,9 @@ export class MultiStepFormComponent implements OnInit {
   storage = 'Storage';
   profile = 'Profile';
   onlineTextSummary = '';
-  onlinePriceSummary = 0;
   onlineTextSummary2 = '';
   onlineTextSummary3 = '';
+  onlinePriceSummary = 0;  
   onlinePriceSummary2 = 0;
   onlinePriceSummary3 = 0;
   status1 = false;
@@ -43,9 +43,27 @@ export class MultiStepFormComponent implements OnInit {
   status3 = false;
   totalAmount = 0;
   tab5!: boolean;
-  constructor() { }
+  FormData!: FormGroup;
+  name: any;
+  nameErrorMessage!: string | null;
+  email: any;
+  emailErrorMessage!: string | null;
+  phone: any;
+  phoneErrorMessage!: string | null;
+
+  constructor(private builder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.FormData = this.builder.group({
+      name:new FormControl('', [Validators.required,  Validators.pattern('^[a-zA-Z ]+$')]),
+      email:new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+      phone: new FormControl('',[Validators.required,
+        Validators.pattern("^[0-9 ]*$")])
+  })
+
+
+
+  console.log(this.FormData.status)
     this.onlinePriceSummary;
     this.selected;
     this.timePlan();
@@ -53,6 +71,26 @@ export class MultiStepFormComponent implements OnInit {
     // this.addPickToSummary()
     this.tab1 = true;
     this.status == 'status';
+  }
+  nameVal(e: any) {
+    this.name = e.target.value
+    console.log(e.target.value)
+    console.log(this.FormData.controls['name'])
+    this.nameErrorMessage=this.FormData.controls['name'].errors?.['pattern']?"pattern":null
+  }
+
+  emailVal(e: any) {
+    this.email = e.target.value
+    console.log(e.target.value)
+    console.log(this.FormData.controls['email'])
+    this.emailErrorMessage=this.FormData.controls['email'].errors?.['pattern']?"pattern":null
+  }
+
+  phoneVal(e: any) {
+    this.phone = e.target.value
+    console.log(e.target.value)
+    console.log(this.FormData.controls['phone'])
+    this.phoneErrorMessage=this.FormData.controls['phone'].errors?.['pattern']?"pattern":null
   }
 
   timePlan() {
@@ -123,7 +161,6 @@ export class MultiStepFormComponent implements OnInit {
       this.status2 = false;
       this.status3 = false;
       this.selected = false;
-
       this.totalAmount = 0;
     }
     return (this.status = tab);
@@ -135,6 +172,7 @@ export class MultiStepFormComponent implements OnInit {
     this.addPickToSummary();
     this.addPickToSummary2();
     this.addPickToSummary3();
+    this.addPlanToSummary(this.planText)
   }
   addPlanToSummary(plan: any) {
     plan == this.arcade

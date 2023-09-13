@@ -9,15 +9,33 @@ import emailjs from '@emailjs/browser'
 })
 export class FormComponent implements OnInit {
   FormData!: FormGroup;
+  name: any;
+  nameErrorMessage!: string | null;
+  email: any;
+  emailErrorMessage!: string | null;
 
   constructor(private builder: FormBuilder, private contact: ContactService) { }
 
   ngOnInit(): void {
     this.FormData = this.builder.group({
-      name: new FormControl('', [Validators.required]),
-      email: new FormControl('',[Validators.required]),
+      name: new FormControl('', [Validators.required,  Validators.pattern('^[a-zA-Z ]+$')]),
+      email: new FormControl('',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
       message: new FormControl('', [Validators.required])
   })}
+
+  nameVal(e: any) {
+    this.name = e.target.value
+    console.log(e.target.value)
+    console.log(this.FormData.controls['name'])
+    this.nameErrorMessage=this.FormData.controls['name'].errors?.['pattern']?"pattern":null
+  }
+
+  emailVal(e: any) {
+    this.email = e.target.value
+    console.log(e.target.value)
+    console.log(this.FormData.controls['email'])
+    this.emailErrorMessage=this.FormData.controls['email'].errors?.['pattern']?"pattern":null
+  }
 
 send(){
   emailjs.init('7r9YzdI0azp0rXeCb')

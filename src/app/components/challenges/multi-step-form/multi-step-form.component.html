@@ -3,36 +3,40 @@
         <!-- SIDEBAR.................................................................... -->
         <div class="sidebar col-4 d-none d-sm-block">
             <li class="d-flex">
-                <button class="nav-link" [ngClass]="{ active: tab1 }" (click)="change(tabStatus)">
+                <button class="nav-link" [ngClass]="{ active: tab1 }" >
                     1
                 </button>
+                <!-- (click)="change(tabStatus)" -->
                 <div class="textDiv">
                     <label class="stepText col-12">STEP 1 </label>
                     <label class="stepText1">YOUR INFO</label>
                 </div>
             </li>
             <li class="d-flex">
-                <button class="nav-link" [ngClass]="{ active: tab2 }" (click)="change(tabStatus2)">
+                <button class="nav-link" [ngClass]="{ active: tab2 }" >
                     2
                 </button>
+                <!-- (click)="change(tabStatus2)" -->
                 <div class="textDiv">
                     <label class="stepText col-12">STEP 2 </label>
                     <label class="stepText1">SELECT PLAN</label>
                 </div>
             </li>
             <li class="d-flex">
-                <button class="nav-link" [ngClass]="{ active: tab3 }" (click)="change(tabStatus3)">
+                <button class="nav-link" [ngClass]="{ active: tab3 }" >
                     3
                 </button>
+                <!-- (click)="change(tabStatus3)" -->
                 <div class="textDiv">
                     <label class="stepText col-12">STEP 3 </label>
                     <label class="stepText1">ADD-ONS</label>
                 </div>
             </li>
             <li class="d-flex">
-                <button class="nav-link" [ngClass]="{ active: tab4 }" (click)="change(tabStatus4)">
+                <button class="nav-link" [ngClass]="{ active: tab4 }" >
                     4
                 </button>
+                <!-- (click)="change(tabStatus4)" -->
                 <div class="textDiv">
                     <label class="stepText col-12">STEP 4 </label>
                     <label class="stepText1">SUMMARY</label>
@@ -42,16 +46,16 @@
         <!-- HEADER....................................................................................................... -->
         <div class="headerMobile col-12 d-sm-none">
   <div class="d-flex justify-content-around headerMobile2">
-    <button class="nav-link" [ngClass]="{ active: tab1 }" (click)="change(tabStatus)">
+    <button class="nav-link" [ngClass]="{ active: tab1 }">
         1
     </button>
-    <button class="nav-link" [ngClass]="{ active: tab2 }" (click)="change(tabStatus2)">
+    <button class="nav-link" [ngClass]="{ active: tab2 }" >
         2
     </button>
-    <button class="nav-link" [ngClass]="{ active: tab3 }" (click)="change(tabStatus3)">
+    <button class="nav-link" [ngClass]="{ active: tab3 }">
         3
     </button>
-    <button class="nav-link" [ngClass]="{ active: tab4 }" (click)="change(tabStatus4)">
+    <button class="nav-link" [ngClass]="{ active: tab4 }" >
         4
     </button>
   </div>
@@ -59,7 +63,7 @@
         <!-- CONTENT.................................................................... -->
         <div class="content col-sm-8">
             <!-- INFO................................................................... -->
-            <div class="contentDiv" *ngIf="status == 'status' ? true : false">
+            <form class="contentDiv" *ngIf="status == 'status' ? true : false" [formGroup]="FormData">
                 <h2 class="contentTitle1">Personal info</h2>
                 <p class="contentText">
                     Please provide your name, email addres, and phone number.
@@ -67,23 +71,26 @@
 
                 <div class="col formDiv">
                     <label for="name" class="contentTitle">Name:</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" formControlName="name" (input)="nameVal($event)" [ngClass]="{'errorBorder': nameErrorMessage=='pattern'? true:false}"/>
+                    <p *ngIf="nameErrorMessage=='pattern'" class="text-danger">Please fill in your name!</p>
                 </div>
                 <div class="col formDiv">
                     <label for="email" class="contentTitle">Email Address:</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" formControlName="email" (input)="emailVal($event)" [ngClass]="{'errorBorder': emailErrorMessage=='pattern'? true:false}"/>
+                    <p *ngIf="emailErrorMessage=='pattern'" class="text-danger">Please enter a valid email address!</p>
                 </div>
                 <div class="col formDiv">
                     <label for="message" class="contentTitle">Phone Number:</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" formControlName="phone" (input)="phoneVal($event)" [ngClass]="{'errorBorder': phoneErrorMessage=='pattern'? true:false}"/>
+                    <p *ngIf="phoneErrorMessage=='pattern'" class="text-danger">Please fill in numbers only!</p>
                 </div>
 
                 <div>
-                    <button class="btn btn-primary btnPosition" (click)="change(tabStatus2)">
+                    <button class="btn btn-primary btnPosition" (click)="change(tabStatus2)" [disabled]="!FormData.valid">
                         Next step
                     </button>
                 </div>
-            </div>
+            </form>
             <!-- PLAN................................................................... -->
             <div class="" *ngIf="status == 'status2' ? true : false">
                 <h2 class="contentTitle1">Select your plan</h2>
@@ -92,7 +99,7 @@
                 </p>
 
                 <div class="d-flex justify-content-around">
-                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(arcade)">
+                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(arcade)" [ngClass]='{focus:planText == "Arcade"}'>
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40">
                             <g fill="none" fill-rule="evenodd">
                                 <circle cx="20" cy="20" r="20" fill="#FFAF7E" />
@@ -108,7 +115,7 @@
                             2 months free
                         </p>
                     </div>
-                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(advanced)">
+                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(advanced)"  [ngClass]='{focus:planText == "Advanced"}'>
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40">
                             <g fill="none" fill-rule="evenodd">
                                 <circle cx="20" cy="20" r="20" fill="#F9818E" />
@@ -124,7 +131,7 @@
                             2 months free
                         </p>
                     </div>
-                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(pro)">
+                    <div type="button" class="boxDiv formDiv" (click)="addPlanToSummary(pro)" [ngClass]='{focus:planText == "Pro"}'>
                         <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 40 40">
                             <g fill="none" fill-rule="evenodd">
                                 <circle cx="20" cy="20" r="20" fill="#483EFF" />
@@ -153,7 +160,7 @@
                 <button class="btn btn-primary btnPosition2" (click)="change(tabStatus)">
                     Previous step
                 </button>
-                <button class="btn btn-primary btnPosition" (click)="change(tabStatus3)">
+                <button class="btn btn-primary btnPosition"  [disabled]="planPrice<9" (click)="change(tabStatus3)">
                     Next step
                 </button>
             </div>
@@ -211,7 +218,7 @@
                 <table class="table table-hover">
                     <tbody>
                       <tr>
-                        <td class="summaryTitle">{{planText}} ({{summaryTime}}) <br> <p class="summaryText">change</p></td>
+                        <td class="summaryTitle">{{planText}} ({{summaryTime}}) <br> <p class="summaryText" (click)="change(tabStatus2)">change</p></td>
                         <td class="summaryTitle">${{planPrice}}/{{summaryTime}}</td>
                       </tr>
                       <tr *ngIf="status1">
